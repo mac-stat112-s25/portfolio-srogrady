@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>8&nbsp; Mulivariate Viz – COMP/STAT112 Notebook</title>
+<title>9&nbsp; Mulivariate Viz – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,7 +53,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -75,8 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,35 +97,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../style/custom.css">
+}</script><link rel="stylesheet" href="../style/custom.css">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Shaylee O’Grady</a> 
         <div class="sidebar-tools-main">
@@ -150,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
@@ -164,8 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bw/bw-uni.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
@@ -195,8 +180,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bw/Solo Project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Solo Project</span></span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -205,47 +196,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-uni.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-bi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-multi.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-spatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/quarto-demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">My first Quarto document</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/wranglingICA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">wranglingICA</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/datesICA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">datesICA</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ICAreshapingg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">ICAreshaping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/Factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">FactorsICA</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">strings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/Data_Import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data_Import</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/proposal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Proposal - Group Project</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li>
+<a href="#exercises-required" id="toc-exercises-required" class="nav-link active" data-scroll-target="#exercises-required"><span class="header-section-number">9.1</span> Exercises (required)</a>
+  <ul class="collapse">
+<li><a href="#the-story" id="toc-the-story" class="nav-link" data-scroll-target="#the-story">The story</a></li>
+  <li><a href="#exercise-1-sat-scores" id="toc-exercise-1-sat-scores" class="nav-link" data-scroll-target="#exercise-1-sat-scores">Exercise 1: SAT scores</a></li>
+  <li><a href="#exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries" id="toc-exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries" class="nav-link" data-scroll-target="#exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries">Exercise 2: SAT Scores vs Per Pupil Spending &amp; SAT Scores vs Salaries</a></li>
+  <li><a href="#exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries" id="toc-exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries" class="nav-link" data-scroll-target="#exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries">Exercise 3: SAT Scores vs Per Pupil Spending <em>and</em> Teacher Salaries</a></li>
+  <li><a href="#exercise-4-another-way-to-incorporate-scale" id="toc-exercise-4-another-way-to-incorporate-scale" class="nav-link" data-scroll-target="#exercise-4-another-way-to-incorporate-scale">Exercise 4: Another way to Incorporate Scale</a></li>
+  <li><a href="#exercise-5-finally-an-explanation" id="toc-exercise-5-finally-an-explanation" class="nav-link" data-scroll-target="#exercise-5-finally-an-explanation">Exercise 5: Finally an Explanation</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></a></li></ol></nav>
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></a></li></ol></nav><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">
+<span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span>
+</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -259,17 +310,180 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<p>Use this file for practice with the <strong>mulivariate viz</strong> in-class activity. Refer to the class website for details.</p>
+</header><p>Use this file for practice with the <strong>mulivariate viz</strong> in-class activity. Refer to the class website for details.</p>
+<section id="exercises-required" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="exercises-required">
+<span class="header-section-number">9.1</span> Exercises (required)</h2>
+<section id="the-story" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="the-story">The story</h3>
+<p>Though far from a perfect assessment of academic preparedness, SAT scores have historically been used as one measurement of a state’s education system. The <code>education</code> dataset contains various education variables for each state:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import and check out data</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>education <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/sat.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">head</span>(education)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       State expend ratio salary frac verbal math  sat  fracCat
+1    Alabama  4.405  17.2 31.144    8    491  538 1029   (0,15]
+2     Alaska  8.963  17.6 47.951   47    445  489  934 (45,100]
+3    Arizona  4.778  19.3 32.175   27    448  496  944  (15,45]
+4   Arkansas  4.459  17.1 28.934    6    482  523 1005   (0,15]
+5 California  4.992  24.0 41.078   45    417  485  902  (15,45]
+6   Colorado  5.443  18.4 34.571   29    462  518  980  (15,45]</code></pre>
+</div>
+</div>
+<p>A codebook is provided by Danny Kaplan who also made these data accessible:</p>
+<p><img src="https://mac-stat.github.io/images/112/SATcodebook.png" class="img-fluid"></p>
+</section><section id="exercise-1-sat-scores" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-1-sat-scores">Exercise 1: SAT scores</h3>
+<section id="part-a" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a">Part a</h4>
+<p>Construct a plot of how the average <code>sat</code> scores vary from state to state. (Just use 1 variable – <code>sat</code> not <code>State</code>!)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x=</span>sat))<span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-b" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b">Part b</h4>
+<p>Summarize your observations from the plot. Comment on the basics: range, typical outcomes, shape. (Any theories about what might explain this non-normal shape?)</p>
+<p>the SAT scores range from about 840 - 1200 the shape of the plot is slightly skewed right possibly this shape is because there are averages in two specific spots rather than incremental increases in scores. (people either do bad, good, or fantastic)</p>
+</section></section><section id="exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries">Exercise 2: SAT Scores vs Per Pupil Spending &amp; SAT Scores vs Salaries</h3>
+<p>The first question we’d like to answer is: Can the variability in <code>sat</code> scores from state to state be partially explained by how much a state spends on education, specifically its per pupil spending (<code>expend</code>) and typical teacher <code>salary</code>?</p>
+<section id="part-a-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-1">Part a</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Construct a plot of sat vs expend</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y=</span>sat,<span class="at">x=</span>expend))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Construct a plot of sat vs salary</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">y=</span>sat,<span class="at">x=</span>salary))<span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span><span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-b-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-1">Part b</h4>
+<p>What are the relationship trends between SAT scores and spending? Is there anything that surprises you?</p>
+<p>I’m surpised that the on the right-hand side where salary is higher the SAT score drop/ are lower than the middle region where teachers are paid less. I would assume the more money teachers are getting the more drive they have to prepare their students for the SAT.</p>
+</section></section><section id="exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries">Exercise 3: SAT Scores vs Per Pupil Spending <em>and</em> Teacher Salaries</h3>
+<p>Construct <em>one</em> visualization of the relationship of <code>sat</code> with <code>salary</code> <em>and</em> <code>expend</code>. HINT: Start with just 2 variables and tweak that code to add the third variable. Try out a few things!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">y=</span>sat,<span class="at">x=</span>salary,<span class="at">color=</span>expend))<span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span><span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation:
+colour.
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="exercise-4-another-way-to-incorporate-scale" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-4-another-way-to-incorporate-scale">Exercise 4: Another way to Incorporate Scale</h3>
+<p>It can be tough to distinguish color scales and size scales for quantitative variables. Another option is to <em>discretize</em> a quantitative variable, or basically cut it up into <em>categories</em>.</p>
+<p>Construct the plot below. Check out the code and think about what’s happening here. What happens if you change “2” to “3”?</p>
+<p>breaks it up into 3 cuts rather than 2 and so on (CREATES RANGES)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> salary, <span class="at">color =</span> <span class="fu">cut</span>(expend, <span class="dv">3</span>))) <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Describe the trivariate relationship between <code>sat</code>, <code>salary</code>, and <code>expend</code>.</p>
+<p>as expend and salary increase the SAT scores decrease.</p>
+</section><section id="exercise-5-finally-an-explanation" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-5-finally-an-explanation">Exercise 5: Finally an Explanation</h3>
+<p>It’s strange that SAT scores <em>seem</em> to decrease with spending. But we’re leaving out an important variable from our analysis: the fraction of a state’s students that actually take the SAT. The <code>fracCat</code> variable indicates this fraction: <code>low</code> (under 15% take the SAT), <code>medium</code> (15-45% take the SAT), and <code>high</code> (at least 45% take the SAT).</p>
+<section id="part-a-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-2">Part a</h4>
+<p>Build a univariate viz of <code>fracCat</code> to better understand how many states fall into each category.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> fracCat))<span class="sc">+</span><span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-b-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-2">Part b</h4>
+<p>Build 2 bivariate visualizations that demonstrate the relationship between <code>sat</code> and <code>fracCat</code>. What story does your graphic tell and why does this make contextual sense?</p>
+<p>More students taking it = lower scores (probably because where there are less students are the ones who are confident and study more)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">fill=</span>fracCat,<span class="at">x=</span>sat))<span class="sc">+</span><span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">x=</span>fracCat,<span class="at">y=</span>sat))<span class="sc">+</span><span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-c" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-c">Part c</h4>
+<p>Make a trivariate visualization that demonstrates the relationship of <code>sat</code> with <code>expend</code> AND <code>fracCat</code>. Highlight the differences in <code>fracCat</code> groups through color AND unique trend lines. What story does your graphic tell?<br>
+Does it still seem that SAT scores decrease as spending increases?</p>
+<p>no in this case SAT scores are increasing with spending</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> expend, <span class="at">color =</span> fracCat)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-d" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-d">Part d</h4>
+<p>Putting all of this together, explain this example of <strong>Simpson’s Paradox</strong>. That is, why did it appear that SAT scores decrease as spending increases even though the <em>opposite</em> is true?</p>
+<p>It appeared that way because the less money spent on spending the less kids who think they have a chance to do well so less participation so only the best kids participate increasing the low expend areas score values.</p>
 
 
 <!-- -->
 
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -888,27 +1102,160 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../ica/ica-bi.html" class="pagination-link" aria-label="Bivariate Viz">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../ica/ica-spatial.html" class="pagination-link" aria-label="Spatial Viz">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Mulivariate Viz"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>Use this file for practice with the **mulivariate viz** in-class activity.  Refer to the class website for details.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">---</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="an">title:</span><span class="co"> "Mulivariate Viz"</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="co">---</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a></span>
+<span id="cb20-5"><a href="#cb20-5"></a>Use this file for practice with the **mulivariate viz** in-class activity.  Refer to the class website for details.</span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="fu">## Exercises (required)</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a></span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="fu">### The story {-}</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a></span>
+<span id="cb20-11"><a href="#cb20-11"></a>Though far from a perfect assessment of academic preparedness, SAT scores have historically been used as one measurement of a state's education system. The <span class="in">`education`</span> dataset contains various education variables for each state:</span>
+<span id="cb20-12"><a href="#cb20-12"></a></span>
+<span id="cb20-15"><a href="#cb20-15"></a><span class="in">```{r}</span></span>
+<span id="cb20-16"><a href="#cb20-16"></a><span class="co"># Import and check out data</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a>education <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/sat.csv"</span>)</span>
+<span id="cb20-18"><a href="#cb20-18"></a><span class="fu">head</span>(education)</span>
+<span id="cb20-19"><a href="#cb20-19"></a><span class="in">```</span></span>
+<span id="cb20-20"><a href="#cb20-20"></a></span>
+<span id="cb20-21"><a href="#cb20-21"></a>A codebook is provided by Danny Kaplan who also made these data accessible:</span>
+<span id="cb20-22"><a href="#cb20-22"></a></span>
+<span id="cb20-23"><a href="#cb20-23"></a><span class="al">![](https://mac-stat.github.io/images/112/SATcodebook.png)</span></span>
+<span id="cb20-24"><a href="#cb20-24"></a></span>
+<span id="cb20-25"><a href="#cb20-25"></a></span>
+<span id="cb20-26"><a href="#cb20-26"></a><span class="fu">### Exercise 1: SAT scores {-}</span></span>
+<span id="cb20-27"><a href="#cb20-27"></a></span>
+<span id="cb20-28"><a href="#cb20-28"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb20-29"><a href="#cb20-29"></a></span>
+<span id="cb20-30"><a href="#cb20-30"></a>Construct a plot of how the average <span class="in">`sat`</span> scores vary from state to state. (Just use 1 variable -- <span class="in">`sat`</span> not <span class="in">`State`</span>!)</span>
+<span id="cb20-31"><a href="#cb20-31"></a></span>
+<span id="cb20-34"><a href="#cb20-34"></a><span class="in">```{r}</span></span>
+<span id="cb20-35"><a href="#cb20-35"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb20-36"><a href="#cb20-36"></a></span>
+<span id="cb20-37"><a href="#cb20-37"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x=</span>sat))<span class="sc">+</span></span>
+<span id="cb20-38"><a href="#cb20-38"></a>  <span class="fu">geom_density</span>()</span>
+<span id="cb20-39"><a href="#cb20-39"></a></span>
+<span id="cb20-40"><a href="#cb20-40"></a><span class="in">```</span></span>
+<span id="cb20-41"><a href="#cb20-41"></a></span>
+<span id="cb20-42"><a href="#cb20-42"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb20-43"><a href="#cb20-43"></a></span>
+<span id="cb20-44"><a href="#cb20-44"></a>Summarize your observations from the plot. Comment on the basics: range, typical outcomes, shape. (Any theories about what might explain this non-normal shape?)</span>
+<span id="cb20-45"><a href="#cb20-45"></a></span>
+<span id="cb20-46"><a href="#cb20-46"></a>the SAT scores range from about 840 - 1200 the shape of the plot is slightly skewed right possibly this shape is because there are averages in two specific spots rather than incremental increases in scores. (people either do bad, good, or fantastic)</span>
+<span id="cb20-47"><a href="#cb20-47"></a></span>
+<span id="cb20-48"><a href="#cb20-48"></a><span class="fu">### Exercise 2: SAT Scores vs Per Pupil Spending &amp; SAT Scores vs Salaries {-}</span></span>
+<span id="cb20-49"><a href="#cb20-49"></a></span>
+<span id="cb20-50"><a href="#cb20-50"></a>The first question we'd like to answer is: Can the variability in <span class="in">`sat`</span> scores from state to state be partially explained by how much a state spends on education, specifically its per pupil spending (<span class="in">`expend`</span>) and typical teacher <span class="in">`salary`</span>?</span>
+<span id="cb20-51"><a href="#cb20-51"></a></span>
+<span id="cb20-52"><a href="#cb20-52"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb20-53"><a href="#cb20-53"></a></span>
+<span id="cb20-56"><a href="#cb20-56"></a><span class="in">```{r}</span></span>
+<span id="cb20-57"><a href="#cb20-57"></a><span class="co"># Construct a plot of sat vs expend</span></span>
+<span id="cb20-58"><a href="#cb20-58"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y=</span>sat,<span class="at">x=</span>expend))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb20-59"><a href="#cb20-59"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span>
+<span id="cb20-60"><a href="#cb20-60"></a></span>
+<span id="cb20-61"><a href="#cb20-61"></a><span class="in">```</span></span>
+<span id="cb20-62"><a href="#cb20-62"></a></span>
+<span id="cb20-65"><a href="#cb20-65"></a><span class="in">```{r}</span></span>
+<span id="cb20-66"><a href="#cb20-66"></a><span class="co"># Construct a plot of sat vs salary</span></span>
+<span id="cb20-67"><a href="#cb20-67"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span>
+<span id="cb20-68"><a href="#cb20-68"></a></span>
+<span id="cb20-69"><a href="#cb20-69"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">y=</span>sat,<span class="at">x=</span>salary))<span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span><span class="fu">geom_point</span>()</span>
+<span id="cb20-70"><a href="#cb20-70"></a></span>
+<span id="cb20-71"><a href="#cb20-71"></a><span class="in">```</span></span>
+<span id="cb20-72"><a href="#cb20-72"></a></span>
+<span id="cb20-73"><a href="#cb20-73"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb20-74"><a href="#cb20-74"></a></span>
+<span id="cb20-75"><a href="#cb20-75"></a>What are the relationship trends between SAT scores and spending? Is there anything that surprises you?</span>
+<span id="cb20-76"><a href="#cb20-76"></a></span>
+<span id="cb20-77"><a href="#cb20-77"></a>I'm surpised that the on the right-hand side where salary is higher the SAT score drop/ are lower than the middle region where teachers are paid less. I would assume the more money teachers are getting the more drive they have to prepare their students for the SAT. </span>
+<span id="cb20-78"><a href="#cb20-78"></a></span>
+<span id="cb20-79"><a href="#cb20-79"></a></span>
+<span id="cb20-80"><a href="#cb20-80"></a><span class="fu">### Exercise 3: SAT Scores vs Per Pupil Spending *and* Teacher Salaries {-}</span></span>
+<span id="cb20-81"><a href="#cb20-81"></a></span>
+<span id="cb20-82"><a href="#cb20-82"></a>Construct *one* visualization of the relationship of `sat` with `salary` *and* <span class="in">`expend`</span>. HINT: Start with just 2 variables and tweak that code to add the third variable. Try out a few things!</span>
+<span id="cb20-83"><a href="#cb20-83"></a></span>
+<span id="cb20-86"><a href="#cb20-86"></a><span class="in">```{r}</span></span>
+<span id="cb20-87"><a href="#cb20-87"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">y=</span>sat,<span class="at">x=</span>salary,<span class="at">color=</span>expend))<span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span><span class="fu">geom_point</span>()</span>
+<span id="cb20-88"><a href="#cb20-88"></a><span class="in">```</span></span>
+<span id="cb20-89"><a href="#cb20-89"></a></span>
+<span id="cb20-90"><a href="#cb20-90"></a></span>
+<span id="cb20-91"><a href="#cb20-91"></a><span class="fu">### Exercise 4: Another way to Incorporate Scale {-}</span></span>
+<span id="cb20-92"><a href="#cb20-92"></a></span>
+<span id="cb20-93"><a href="#cb20-93"></a>It can be tough to distinguish color scales and size scales for quantitative variables. Another option is to *discretize* a quantitative variable, or basically cut it up into *categories*.</span>
+<span id="cb20-94"><a href="#cb20-94"></a></span>
+<span id="cb20-95"><a href="#cb20-95"></a>Construct the plot below. Check out the code and think about what's happening here. What happens if you change "2" to "3"?</span>
+<span id="cb20-96"><a href="#cb20-96"></a></span>
+<span id="cb20-97"><a href="#cb20-97"></a>breaks it up into 3 cuts rather than 2 and so on (CREATES RANGES)</span>
+<span id="cb20-98"><a href="#cb20-98"></a></span>
+<span id="cb20-99"><a href="#cb20-99"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb20-100"><a href="#cb20-100"></a><span class="in">ggplot(education, aes(y = sat, x = salary, color = cut(expend, 3))) + </span></span>
+<span id="cb20-101"><a href="#cb20-101"></a><span class="in">  geom_point() + </span></span>
+<span id="cb20-102"><a href="#cb20-102"></a><span class="in">  geom_smooth(se = FALSE, method = "lm")</span></span>
+<span id="cb20-103"><a href="#cb20-103"></a><span class="in">```</span></span>
+<span id="cb20-104"><a href="#cb20-104"></a></span>
+<span id="cb20-105"><a href="#cb20-105"></a>Describe the trivariate relationship between <span class="in">`sat`</span>, <span class="in">`salary`</span>, and <span class="in">`expend`</span>.</span>
+<span id="cb20-106"><a href="#cb20-106"></a></span>
+<span id="cb20-107"><a href="#cb20-107"></a>as expend and salary increase the SAT scores decrease. </span>
+<span id="cb20-108"><a href="#cb20-108"></a></span>
+<span id="cb20-109"><a href="#cb20-109"></a><span class="fu">### Exercise 5: Finally an Explanation {-}</span></span>
+<span id="cb20-110"><a href="#cb20-110"></a></span>
+<span id="cb20-111"><a href="#cb20-111"></a>It's strange that SAT scores *seem* to decrease with spending. But we're leaving out an important variable from our analysis: the fraction of a state's students that actually take the SAT. The <span class="in">`fracCat`</span> variable indicates this fraction: <span class="in">`low`</span> (under 15% take the SAT), <span class="in">`medium`</span> (15-45% take the SAT), and <span class="in">`high`</span> (at least 45% take the SAT).</span>
+<span id="cb20-112"><a href="#cb20-112"></a></span>
+<span id="cb20-113"><a href="#cb20-113"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb20-114"><a href="#cb20-114"></a></span>
+<span id="cb20-115"><a href="#cb20-115"></a>Build a univariate viz of <span class="in">`fracCat`</span> to better understand how many states fall into each category.</span>
+<span id="cb20-116"><a href="#cb20-116"></a></span>
+<span id="cb20-119"><a href="#cb20-119"></a><span class="in">```{r}</span></span>
+<span id="cb20-120"><a href="#cb20-120"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> fracCat))<span class="sc">+</span><span class="fu">geom_bar</span>()</span>
+<span id="cb20-121"><a href="#cb20-121"></a></span>
+<span id="cb20-122"><a href="#cb20-122"></a><span class="in">```</span></span>
+<span id="cb20-123"><a href="#cb20-123"></a></span>
+<span id="cb20-124"><a href="#cb20-124"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb20-125"><a href="#cb20-125"></a></span>
+<span id="cb20-126"><a href="#cb20-126"></a>Build 2 bivariate visualizations that demonstrate the relationship between <span class="in">`sat`</span> and <span class="in">`fracCat`</span>. What story does your graphic tell and why does this make contextual sense?</span>
+<span id="cb20-127"><a href="#cb20-127"></a></span>
+<span id="cb20-128"><a href="#cb20-128"></a>More students taking it = lower scores (probably because where there are less students are the ones who are confident and study more)</span>
+<span id="cb20-129"><a href="#cb20-129"></a></span>
+<span id="cb20-132"><a href="#cb20-132"></a><span class="in">```{r}</span></span>
+<span id="cb20-133"><a href="#cb20-133"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">fill=</span>fracCat,<span class="at">x=</span>sat))<span class="sc">+</span><span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>)</span>
+<span id="cb20-134"><a href="#cb20-134"></a><span class="fu">ggplot</span>(education,<span class="fu">aes</span>(<span class="at">x=</span>fracCat,<span class="at">y=</span>sat))<span class="sc">+</span><span class="fu">geom_point</span>()</span>
+<span id="cb20-135"><a href="#cb20-135"></a><span class="in">```</span></span>
+<span id="cb20-136"><a href="#cb20-136"></a></span>
+<span id="cb20-137"><a href="#cb20-137"></a><span class="fu">#### Part c {-}</span></span>
+<span id="cb20-138"><a href="#cb20-138"></a></span>
+<span id="cb20-139"><a href="#cb20-139"></a>Make a trivariate visualization that demonstrates the relationship of <span class="in">`sat`</span> with <span class="in">`expend`</span> AND <span class="in">`fracCat`</span>. Highlight the differences in <span class="in">`fracCat`</span> groups through color AND unique trend lines. What story does your graphic tell?\</span>
+<span id="cb20-140"><a href="#cb20-140"></a>Does it still seem that SAT scores decrease as spending increases?</span>
+<span id="cb20-141"><a href="#cb20-141"></a> </span>
+<span id="cb20-142"><a href="#cb20-142"></a> no in this case SAT scores are increasing with spending </span>
+<span id="cb20-143"><a href="#cb20-143"></a> </span>
+<span id="cb20-144"><a href="#cb20-144"></a> </span>
+<span id="cb20-147"><a href="#cb20-147"></a><span class="in">```{r}</span></span>
+<span id="cb20-148"><a href="#cb20-148"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> expend, <span class="at">color =</span> fracCat)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb20-149"><a href="#cb20-149"></a></span>
+<span id="cb20-150"><a href="#cb20-150"></a><span class="in">```</span></span>
+<span id="cb20-151"><a href="#cb20-151"></a></span>
+<span id="cb20-152"><a href="#cb20-152"></a><span class="fu">#### Part d {-}</span></span>
+<span id="cb20-153"><a href="#cb20-153"></a></span>
+<span id="cb20-154"><a href="#cb20-154"></a>Putting all of this together, explain this example of **Simpson’s Paradox**. That is, why did it appear that SAT scores decrease as spending increases even though the *opposite* is true?</span>
+<span id="cb20-155"><a href="#cb20-155"></a></span>
+<span id="cb20-156"><a href="#cb20-156"></a>It appeared that way because the less money spent on spending the less kids who think they have a chance to do well so less participation so only the best kids participate increasing the low expend areas score values. </span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-
 
 
 
