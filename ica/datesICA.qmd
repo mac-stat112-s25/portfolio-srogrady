@@ -1,0 +1,138 @@
+---
+title: "datesICA"
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+penguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
+
+# Check it out
+head(penguins)
+```
+
+```{r}
+# Create a dataset with just Adelie and Chinstrap using %in%
+# Pipe this into `count(species)` to confirm that you only have these 2 species
+penguins |>
+  filter(species %in% c("Adelie","Chinstrap")) |>
+  count(species)
+
+```
+
+```{r}
+# Create a dataset with just Adelie and Chinstrap using !=
+# Pipe this into `count(species)` to confirm that you only have these 2 species
+penguins |> 
+  filter(species != "Gentoo") |>
+  count(species)
+```
+
+```{r}
+# NOTE the use of is.na()
+penguins |> 
+  summarize(sum(is.na(body_mass_g)))
+```
+
+```{r}
+# NOTE the use of is.na()
+penguins_w_body_mass <- penguins |> 
+  filter(!is.na(body_mass_g))
+
+# Compare the number of penguins in this vs the original data
+nrow(penguins_w_body_mass)
+```
+
+```{r}
+nrow(penguins)
+```
+
+```{r}
+penguins_w_body_mass |> 
+  summarize(sum(is.na(sex)))
+```
+
+```{r}
+penguins_complete <- penguins |> 
+  na.omit()
+```
+
+```{r}
+nrow(penguins_complete)
+```
+
+```{r}
+nrow(penguins)
+```
+
+```{r}
+# First: recall the variable names
+names(penguins)
+```
+
+```{r}
+# Use a shortcut to keep everything but the year and island variables
+penguins |>
+select(-year,-island) 
+```
+
+```{r}
+# Use a shortcut to keep only species and the penguin characteristics measured in mm
+penguins |> 
+  select(species,ends_with("mm"))
+
+```
+
+```{r}
+# Use a shortcut to keep only species and bill-related measurements
+penguins |> 
+  select(species, starts_with("bill"))
+```
+
+```{r}
+# Use a shortcut to keep only species and the length-related characteristics
+penguins |> 
+  select(species,contains("length"))
+```
+
+```{r}
+# Change this code to sort the penguins by species, and then island name
+# NOTE: The first row should be an Adelie penguin living on Biscoe island
+penguins |> 
+  arrange(species)
+```
+
+```{r}
+# Change this code to count the number of male/female penguins observed for each species
+penguins |> 
+  count(species,sex)
+```
+
+```{r}
+# Change this code to calculate the average body mass by species and sex
+penguins |> 
+  group_by(species, sex) |> 
+  summarize(mean = mean(body_mass_g, na.rm = TRUE))
+```
+
+```{r}
+# Get today's date
+as.Date(today())
+```
+
+```{r}
+# Let's store this as "today" so we can work with it below
+today <- as.Date(today())
+
+# Check out the class of this object
+class(today)
+```
+
+```{r}
+year(today)
+```
+
+```{r}
+# What do these lines produce / what's their difference?
+month(today)
+```

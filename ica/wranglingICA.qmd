@@ -1,0 +1,56 @@
+---
+title: "wranglingICA"
+editor: visual
+---
+
+```{r}
+# Define elections_small
+
+library(tidyverse)
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+elections_small <- elections |>
+  select(state_name, county_name, total_votes_20, repub_pct_20, dem_pct_20, total_votes_16, dem_pct_16)
+
+# Check out the first 6 rows to confirm your code did what you think it did!
+head(elections_small)
+```
+
+```{r}
+# Keep only data on counties in Hawaii
+elections_small |>
+ filter(state_name == "Hawaii")
+```
+
+```{r}
+# What does this do? filters values of state names only of Hawaii and Delaware 
+elections_small |>
+  filter(state_name %in% c("Hawaii", "Delaware"))
+```
+
+```{r}
+# Keep only data on counties where the Republican got MORE THAN 93.97% of the vote in 2020
+# THINK: What variable is relevant here?
+elections_small |>
+filter(repub_pct_20 > 93.97)
+```
+
+```{r}
+# Keep only data on counties where the Republican got AT LEAST 93.97% of the vote in 2020
+# This should have 1 more row (observation) than your answer above
+elections_small |>
+filter(repub_pct_20 >= 93.97)
+```
+
+```{r}
+# Keep only data on counties in Texas where the Democrat got more than 65% of the vote in 2020
+# Do this 2 ways.
+# Method 1: 2 filters with 1 condition each
+# elections_small |>
+#  filter(___) |>
+#  filter(___)
+
+# Method 2: 1 filter with 2 conditions
+#elections_small |> 
+#  filter(___, ___)
+```

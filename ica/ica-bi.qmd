@@ -3,3 +3,126 @@ title: "Bivariate Viz"
 ---
 
 Use this file for practice with the **bivariate viz** in-class activity.  Refer to the class website for details.
+
+
+```{r}
+# Load data
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+# Check it out
+head(elections)
+```
+```{r}
+library(ggplot2)
+# Set up the plotting frame
+# How does this differ than the frame for our histogram of repub_pct_20 alone? it has two variables from the data instead of just one
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))
+```
+
+```{r}
+# Add a layer of points for each county("geom_point()")
+# Take note of the geom!
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point()
+```
+
+```{r}
+# Change the shape of the points
+# What happens if you change the shape to another number? the data points change their shape 
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point(shape = 3)
+```
+
+```{r}
+# YOU TRY: Modify the code to make the points "orange"
+# NOTE: Try to anticipate if "color" or "fill" will be useful here. Then try both.
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point(color = "ORANGE" )
+```
+
+```{r}
+# Add a layer that represents each county by the state it's in
+# Take note of the geom and the info it needs to run!
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_text(aes(label = state_abbr)) 
+```
+
+#repub pct 20 and repub pct 16 have a strong positive relationship with a few possible outliers in texas. 
+
+
+```{r}
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_smooth()
+```
+
+```{r}
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+```{r}
+# Scatterplot of repub_pct_20 vs median_rent
+
+ggplot(elections, aes(y = repub_pct_20, x = median_rent)) +
+  geom_point(color = "red") + geom_smooth()
+
+# they have a moderately weak negative relationship THIS ONE IS BETTER AT PREDICTING
+
+
+# Scatterplot of repub_pct_20 vs median_age
+
+ggplot(elections, aes(y = repub_pct_20, x = median_age)) +
+  geom_point(color = "light blue" ) + geom_smooth()
+
+# they have a weak positive relationship 
+
+
+```
+
+
+```{r}
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_point()
+
+# not that effective of a visual because it doesn't show the numerical trends/ and shaope of the data to determine a relationship
+```
+
+```{r}
+# Side-by-side violin plots
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_violin()
+```
+```{r}
+# Side-by-side boxplots (defined below)
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_boxplot()
+```
+
+# The 2020 republican  country-level support had many red and purple voter outliers below 50 but also had high median levels of support above 50 for each color. 
+
+```{r}
+ggplot(elections, aes(x = repub_pct_20)) +
+  geom_density()
+```
+```{r}
+# Name two "bad" things about this plot
+# 1) the colors do not match which can be misleading
+# 2) the density are on top of eachother 
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density()
+```
+
+```{r}
+# What does scale_fill_manual do?
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+```
+

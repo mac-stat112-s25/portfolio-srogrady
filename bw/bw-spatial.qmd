@@ -3,3 +3,27 @@ title: "Spatial Viz"
 ---
 
 Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+
+```{r}
+#| eval: true
+library(ggplot2)
+library(tidyverse)
+library(leaflet)
+# Import starbucks location data
+starbucks <- read.csv("https://mac-stat.github.io/data/starbucks.csv")
+
+starbucks_mn <- starbucks |>   
+  filter(Country == "US", State.Province == "MN")
+```
+
+
+```{r}
+
+leaflet(data = starbucks_mn) |> 
+  addTiles() |> 
+  addCircleMarkers(color ="red", lng = ~Longitude, lat = ~Latitude)
+
+
+```
+

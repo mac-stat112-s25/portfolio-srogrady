@@ -3,3 +3,33 @@ title: "Trivariate Viz"
 ---
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(tidyverse)
+library(lubridate)
+
+# Import the data
+# Only keep certain variables of interest
+trips <- readRDS(gzcon(url("https://mac-stat.github.io/data/2014-Q4-Trips-History-Data-Small.rds"))) %>% 
+  select(client, sstation, sdate, duration) %>% 
+  mutate(duration = as.numeric(hms(duration))/60)
+```
+
+```{r}
+trips <- trips |> 
+  mutate(
+    s_date = as_date(sdate),
+    s_day_of_week = wday(sdate,label=TRUE),
+    s_hour = hour(sdate),
+    s_minute = minute(sdate),
+    s_time_of_day = s_hour + s_minute/60)
+```
+
+
+```{r}
+ggplot(trips,aes(x=s_time_of_day, color=client))+
+  geom_density()+
+  facet_wrap(~s_day_of_week)+
+  labs(titel ="times of day *and* days of the week registered vs client rides", x = "Time of Day", caption = "Made by Shaylee")
+fig.alt = "density plot of the time of day of bike rides faceted by the day of the week and colored in blue and red by whether or not the biker is a casual biker or registered."
+```

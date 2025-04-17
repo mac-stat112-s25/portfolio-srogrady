@@ -1,0 +1,64 @@
+---
+title: "ICAreshaping"
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+sleep_wide <- read.csv("https://mac-stat.github.io/data/sleep_wide.csv")
+
+head(sleep_wide)
+```
+
+# units of observation are the subjects.
+
+# I would need to create a column that holds all the reaction times and then a day column
+
+#ggplot(sleep_wide, aes(y = rxn time, x = day, color = Subject))
+
+```{r}
+sleep_day_rxn <- sleep_wide |>
+  pivot_longer(cols = -Subject, names_to = "day", names_prefix = "day_", values_to = "rxn_time")
+
+ggplot(sleep_day_rxn, aes(y=rxn_time,x=day, color =Subject))+
+  geom_line()
+```
+
+```{r}
+sleep_long <- sleep_wide |>
+  pivot_longer(cols = -Subject,
+               names_to = "day",
+               names_prefix = "day_",
+               values_to = "reaction_time") |>
+  mutate(Subject = as.factor(Subject),day = as.numeric(day))
+head(sleep_long,3)
+```
+
+#changed also to make each of the 9 days of the subject study broken up
+
+```{r}
+ggplot(sleep_long, aes(y = reaction_time, x = day, color = Subject)) + 
+  geom_line()
+```
+
+```{r}
+# Make a line plot of reaction time by day for each subject
+# Put these all on separate frames (one per subject)
+ggplot(sleep_long, aes(y = reaction_time, x = day)) + 
+  geom_line() + 
+  facet_wrap(~ Subject)
+```
+
+# reaction time gets much worse around day 5 of lack of sleep for the majority of subjects, meaning less sleep results in a slower reaction time.
+
+```{r}
+# sleep_long |>
+#   pivot_wider(names_from = , values_from = ___) |>
+#   head()
+```

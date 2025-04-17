@@ -3,3 +3,46 @@ title: "Quadvariate Viz"
 ---
 
 Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+warning = FALSE
+echo = FALSE
+library(mosaic)
+library(lubridate)
+data("Birthdays")
+
+daily_births <- Birthdays |>
+  group_by(date) |>
+    summarize(total = sum(births))
+
+daily_births <- daily_births |>
+  mutate(week_day = wday(date,label = TRUE)) |> 
+  mutate(month_day = mday(date)) |> 
+  mutate(year = year(date))
+  
+
+holidays <- read.csv("https://mac-stat.github.io/data/US-Holidays.csv") |>
+  mutate(date = as.POSIXct(lubridate::dmy(date)))
+
+```
+
+```{r}
+# Define daily_births_1980
+daily_births_1980 <- daily_births |>
+  filter(year == 1980) |>
+  left_join(holidays, by = "date") |>
+  mutate(is_holiday = !is.na(holiday))
+
+```
+
+
+```{r}
+daily_births_1980 |>
+  ggplot(aes(y=total, x = date, color = week_day, shape = is_holiday))+
+    geom_point()+
+  theme_classic()+
+  labs(y = "Total Number of Babies Born", x = "Month in 1980", caption = "Made by Shaylee")
+fig.alt = "dot plot representing the total number of babies born (y-axis) per day (x-axis) in 1980. Color each date according to its day of the week, and shape each date according to whether or not it’s a holiday.."
+```
+```
+
