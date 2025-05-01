@@ -18,7 +18,8 @@ elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv"
 ggplot(elections, aes(y = repub_pct_20, x = median_age)) +
   geom_point(color = "light blue" ) + 
   geom_smooth()+
-  labs(x = "Median Age (year)", y = "The 2020 Republican Country-level Support", title = "Relationship between Median Age and 2020 Republican Election Suppport", caption = "Made by Shaylee")
+  theme_classic()+
+  labs(x = "Median Age (year)", y = "The 2020 Republican Country-level Support", title = "Relationship between Median Age and 2020 Republican Election Suppport", caption = "Made by Shaylee (4/25)")
 
 fig.alt = "Scatter Plot showing the Relationship between Median Age (x-axis) and 2020 Republican Election Suppport (y-axis). Use a line of best fit to show a possible weak positive relationship where most of the data is clustered between age 30-50 and 25-75% support."
 

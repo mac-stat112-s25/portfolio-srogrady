@@ -30,6 +30,7 @@ trips <- trips |>
 ggplot(trips,aes(x=s_time_of_day, color=client))+
   geom_density()+
   facet_wrap(~s_day_of_week)+
-  labs(titel ="times of day *and* days of the week registered vs client rides", x = "Time of Day", caption = "Made by Shaylee")
+  theme_classic()+
+  labs(titel ="times of day *and* days of the week registered vs client rides", x = "Time of Day", caption = "Made by Shaylee (4/25)")
 fig.alt = "density plot of the time of day of bike rides faceted by the day of the week and colored in blue and red by whether or not the biker is a casual biker or registered."
 ```

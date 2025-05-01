@@ -17,6 +17,7 @@ library(readr)
 library(RColorBrewer)
 
 ```
+
 ```{r}
 nz_boundaries <- ne_states(country = "new zealand")
 
@@ -25,15 +26,15 @@ nz_boundaries <- ne_states(country = "new zealand")
 ```{r}
 st_bbox(nz_boundaries)
 ```
-::: {.callout-note title="New Zealand Project Exploration"}
 
-:::  First step was to map New Zealand and outline its 16 regions within that map so that I could investigate each region later on.
 
+First step was to map New Zealand and outline its 16 regions within that map so that I could investigate each region later on.
 
 ```{r}
 library(ggplot2)
   ggplot(data = nz_boundaries) +
     geom_sf( ) +
+  theme_classic()+
     coord_sf(xlim = c(160, 180), ylim = c(-52.600313, -32), expand = FALSE)
 ```
 
@@ -44,24 +45,24 @@ nz_boundaries2 <- nz_boundaries |>
 # these are the true 16 regions for local government that New Zealand is divided up by. 
 ```
 
-:::  Second step I filled the map by the region name to seperate each of the regions by a color.
-
+Second step I filled the map by the region name to seperate each of the regions by a color.
 
 ```{r}
 library(ggplot2)
 
 ggplot(data = nz_boundaries2, aes(fill = name)) +
     geom_sf( ) +
+  theme_classic()+
     coord_sf(xlim = c(160, 180), ylim = c(-52.600313, -32))
 ```
 
-:::  Then I used plotly to make the map interactive so I could hover to know what each region is named easily.
-
+Then I used plotly to make the map interactive so I could hover to know what each region is named easily.
 
 ```{r}
 library(ggplot2)
 nz <- ggplot(data = nz_boundaries2, aes(fill = name)) +
     geom_sf(color = "black", size = 0.05) +
+    theme_classic()+
     coord_sf(xlim = c(165, 180), ylim = c(-49, -32))+
     scale_fill_viridis_d(option = "plasma")
                
@@ -71,7 +72,6 @@ ggplotly(nz, tooltip = "fill")
 
 #made it interactive to be able to know what region I am looking at using plotly.
 ```
-
 
 ```{r}
 region <- c("Southland", "Marlborough District", "Nelson City", "Tasman District", "West Coast",  "Otago", "Canterbury","Auckland", "Waikato", "Wellington", "Manawatu-Wanganui", "Taranaki", "Northland", "Bay of Plenty", "Gisborne District","Hawke's Bay")
@@ -86,27 +86,29 @@ nz_census <- data.frame(region, year, median_age)
 
 ```
 
-
-
-
 ```{r}
 nz_map_data <- nz_boundaries2 |>
   left_join(nz_census, by = c("name" = "region"))
 ```
 
-
-
-
-:::  Then I made choropleth map of New Zealand regions Median age in 2023 using data from the website infometrics that held New Zealand 2023 census data "https://rep.infometrics.co.nz/new-zealand/census/drill-down/five-year-age-group/age-median?census=gisborne-district"
-
+Then I made choropleth map of New Zealand regions Median age in 2023 using data from the website infometrics that held New Zealand 2023 census data "https://rep.infometrics.co.nz/new-zealand/census/drill-down/five-year-age-group/age-median?census=gisborne-district"
 
 ```{r}
 ggplot(nz_map_data) +
   geom_sf(aes(fill = median_age), color = "white") +
   scale_fill_viridis_c(option = "C", direction = -1, name = "Median Age") +
-  theme_minimal() +
-  labs(title = "Median Age by New Zealand Region in 2023", caption = "Made by Shaylee")
+  theme_void() +
+  labs(title = "Median Age by New Zealand Region in 2023", caption = "Made by Shaylee (4/25); Data from 2023 NZ Census")
 fig.alt = "Choropleth map showing New Zealands median age for each of it's 16 main regions based on it's 2023 Census data."
 ```
 
-::: My work here was to show the variation of median age within New Zealand but also to explore whether or not New Zealand has a young or ageing-population and explore that question in it's specific regions as well. It is clear that the West Coast has the oldest median age population at 48.1 as it is colored dark blue, why is that? And on the other hand what makes it so that Auckland has a median age more than 10 years younger than West Coast at 35.9 showing up in light yellow. How can regions be so close but vary so largely in median age. What are the attractions in each area that would make it more suitable for a specific age group? 
+My work here was to show the variation of median age within New Zealand but also to explore whether or not New Zealand has a young or ageing-population and explore that question in it's specific regions as well.
+
+
+
+
+
+It is clear that the West Coast has the oldest median age population at 48.1 as it is colored dark blue, why is that?
+And on the other hand what makes it so that Auckland has a median age more than 10 years younger than West Coast at 35.9 showing up in light yellow.
+How can regions be so close but vary so largely in median age.
+What are the attractions in each area that would make it more suitable for a specific age group?
