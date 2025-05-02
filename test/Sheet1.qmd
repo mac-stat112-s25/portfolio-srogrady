@@ -1,0 +1,17 @@
+---
+
+---
+# Sheet 1 {-}
+
+
+```{r}
+getwd()
+```
+
+```{r}
+"/Users/shayleeogrady/Desktop/portfolio-srogrady/test/SheetOne.png"
+```
+
+```{r}
+file.exists("test/sheetone.png")
+```

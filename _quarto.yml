@@ -33,12 +33,12 @@ book:
       - bw/Solo Project.qmd
 
     - part: "In-class Activities"
-      chapters: 
+      chapters:
+      - ica/quarto-demo.qmd
       - ica/ica-uni.qmd
       - ica/ica-bi.qmd
       - ica/ica-multi.qmd
       - ica/ica-spatial.qmd
-      - ica/quarto-demo.qmd
       - ica/wranglingICA.qmd
       - ica/datesICA.qmd
       - ica/ICAreshapingg.qmd
@@ -49,6 +49,10 @@ book:
     - part: "Exams"
       chapters: 
         - test/Exam1.qmd
+        
+    - part: "Summary"
+      chapters: 
+        - test/Sheet1.qmd
 
 format:
   html:

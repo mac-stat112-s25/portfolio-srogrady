@@ -2,14 +2,58 @@
 
 ---
 # Exam 1 {-}
+### Grand Research Question : {-}
 
+#### What does the consumption of each food category in each country look like ? {-}
 
 ```{r}
 library(tidyverse)
-library(tidytuesdayR)
 library(readr)
+library(rnaturalearth)
+library(sf)
 
 ```
 
+```{r}
+library(tidytuesdayR)
+tuesdata <- tt_load('2020-02-18')
+fc <-tuesdata$food_consumption
+```
 
+
+##### First let's look at our data : {-}
+
+
+```{r}
+head(fc)
+```
+```{r}
+str(fc)
+```
+
+```{r}
+nrow(fc)
+```
+
+```{r}
+dim(fc)
+```
+
+```{r}
+tail(fc)
+```
+```{r}
+head(fc,22)
+tail(fc,22)
+```
+### The Answer : {-}
+
+```{r}
+#| fig-height: 22
+#| fig-width: 11
+
+ggplot()+
+  geom_point()
+
+```
 
