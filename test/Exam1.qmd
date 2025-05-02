@@ -1,10 +1,12 @@
 ---
 
 ---
-# Exam 1 {-}
-### Grand Research Question : {-}
 
-#### What does the consumption of each food category in each country look like ? {-}
+# Exam 1 {.unnumbered}
+
+### Grand Research Question : {.unnumbered}
+
+#### What does the consumption of each food category in each country look like ? {.unnumbered}
 
 ```{r}
 library(tidyverse)
@@ -20,13 +22,12 @@ tuesdata <- tt_load('2020-02-18')
 fc <-tuesdata$food_consumption
 ```
 
-
-##### First let's look at our data : {-}
-
+##### First let's look at our data : {.unnumbered}
 
 ```{r}
 head(fc)
 ```
+
 ```{r}
 str(fc)
 ```
@@ -42,18 +43,39 @@ dim(fc)
 ```{r}
 tail(fc)
 ```
+
 ```{r}
 head(fc,22)
 tail(fc,22)
 ```
-### The Answer : {-}
+
+### The Answer : {.unnumbered}
+
+#### Not a very good visualization as we need to clean and wrangle our data more (*see Exam 2*)
 
 ```{r}
-#| fig-height: 22
-#| fig-width: 11
+ne_countries(returnclass = "sf") |>
+  select(name) |>
+  mutate(name = ifelse(name == "United States of America", "USA", name)) |>
+  mutate(name = ifelse(name == "Bosnia and Herz.", "Bosnia and Herzegovina", name)) |>
+  mutate(name = ifelse(name == "Czechia", "Czech Republic", name)) |>
+  mutate(name = ifelse(name == "Taiwan", "Taiwan. ROC", name)) |>
+  left_join(
+    fc |>
+      select(-co2_emmission) |>
+      group_by(food_category) |>
+      mutate(consumption = (consumption - mean(consumption)) / sd(consumption)),
+    join_by(name == country)
+  ) |>
+  ggplot(aes(x = name, y = consumption, color = name)) +
+  geom_point() +
+  facet_wrap(~food_category) +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+    legend.position = "none"
+  ) +
+  labs(x = "Country", y = "Standardized Consumption")
 
-ggplot()+
-  geom_point()
+
 
 ```
-

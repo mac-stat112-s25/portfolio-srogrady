@@ -49,10 +49,12 @@ book:
     - part: "Exams"
       chapters: 
         - test/Exam1.qmd
+        - test/Exam2.qmd
         
     - part: "Summary"
       chapters: 
         - test/Sheet1.qmd
+        - test/Sheet2.qmd
 
 format:
   html:

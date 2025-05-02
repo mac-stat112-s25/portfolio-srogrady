@@ -1,0 +1,137 @@
+---
+
+---
+
+# Exam 2 {.unnumbered}
+
+### Continued Exploration : {.unnumbered}
+
+#### What does the consumption of each food category in each country look like ? {.unnumbered}
+
+```{r}
+library(tidyverse)
+library(readr)
+library(rnaturalearth)
+library(sf)
+library(dplyr)
+library(ggplot2)
+
+```
+
+```{r}
+library(tidytuesdayR)
+tuesdata <- tt_load('2020-02-18')
+fc <-tuesdata$food_consumption
+```
+
+```{r}
+str(fc)
+```
+
+```{r}
+head(fc,22)
+
+```
+
+```{r}
+fc |>
+  select(food_category)|>
+  distinct(food_category)
+```
+
+```{r}
+library(forcats)
+
+fcc <- fc |>
+  mutate(food_category = fct_recode(food_category,
+        "Lamb" = 'Lamb & Goat', 
+        "Dairy"= 'Milk - inc. cheese',
+        "Wheat"='Wheat and Wheat Products',
+        "Nuts"='Nuts inc. Peanut Butter'))
+```
+
+```{r}
+fcc |>
+  select(food_category)|>
+  distinct(food_category)
+```
+
+```{r}
+top5 <- fcc |>
+  group_by(country)|>
+  summarise(total_consumption = sum(consumption, na.rm = TRUE))|>
+  arrange(desc(total_consumption))|>
+  slice_head(n=5)
+```
+
+```{r}
+  ggplot(top5, aes(x = reorder(country, -total_consumption), y = total_consumption))+
+  geom_col()+
+  labs(title = "Top 5 Countries by Total Food Consumption", x = "Country", y = "Total Consumption")+
+  theme_minimal()
+```
+
+```{r}
+
+top5_each_food <- fcc |>
+  group_by(food_category) |>
+  arrange(desc(consumption)) |>
+  slice_head(n = 5) |>
+  select(food_category, country, consumption)
+
+```
+
+```{r}
+#| fig-width: 12 
+#| fig-height: 10
+
+ggplot(top5_each_food, aes(x = reorder(country, consumption), y = consumption, fill = country)) +
+  geom_col(show.legend = FALSE) +
+  coord_flip() +
+  facet_wrap(~ food_category, scales = "free_y") +
+  labs(
+    title = "Top 5 Countries by Consumption per Food Category",
+    x = "Country",
+    y = "Consumption"
+  ) +
+  theme_minimal()
+ 
+```
+
+```{r}
+
+library(viridis)
+
+#| fig-width: 22 
+#| fig-height: 11
+
+ne_countries(returnclass = "sf") |>
+  select(name, geometry) |>
+  mutate(name = ifelse(name == "United States of America", "USA", name)) |>
+  mutate(name = ifelse(name == "Bosnia and Herz.", "Bosnia and Herzegovina", name)) |>
+  mutate(name = ifelse(name == "Czechia", "Czech Republic", name)) |>
+  mutate(name = ifelse(name == "Taiwan", "Taiwan. ROC", name)) |>
+  left_join(
+    fcc |>
+      select(-co2_emmission) |>
+      group_by(food_category) |>
+      mutate(consumption = (consumption - mean(consumption)) / sd(consumption)),
+    join_by(name == country)
+  ) |>
+  pivot_wider(names_from = food_category, values_from = consumption) |>
+  select(-"NA") |>
+  pivot_longer(
+    cols = c(-name, -geometry),
+    names_to = "food_category",
+    values_to = "consumption"
+  ) |>
+  ggplot() +
+  geom_sf(aes(fill = consumption)) +
+  scale_fill_viridis_c(option = "D")+
+  facet_wrap(~food_category) +
+  theme(legend.position = "bottom")+
+  theme_classic()+
+  labs(title = "Choropleth Map of Consumption for Each Food by Country")
+
+
+```
