@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../test/Sheet1.html" rel="next">
+<link href="../test/Exam2.html" rel="next">
 <link href="../ica/Data_Import.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -280,6 +280,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Exam 1</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../test/Exam2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam 2</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -295,6 +301,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../test/Sheet1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sheet 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../test/Sheet2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sheet 2</span></a>
   </div>
 </li>
       </ul>
@@ -440,12 +452,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section></section></section><section id="the-answer" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="the-answer">The Answer :</h3>
+<section id="not-a-very-good-visualization-as-we-need-to-clean-and-wrangle-our-data-more-see-exam-2" class="level4"><h4 class="anchored" data-anchor-id="not-a-very-good-visualization-as-we-need-to-clean-and-wrangle-our-data-more-see-exam-2">Not a very good visualization as we need to clean and wrangle our data more (<em>see Exam 2</em>)</h4>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">select</span>(name) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"United States of America"</span>, <span class="st">"USA"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Bosnia and Herz."</span>, <span class="st">"Bosnia and Herzegovina"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Czechia"</span>, <span class="st">"Czech Republic"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Taiwan"</span>, <span class="st">"Taiwan. ROC"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb17-8"><a href="#cb17-8"></a>    fc <span class="sc">|&gt;</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>      <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>      <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>      <span class="fu">mutate</span>(<span class="at">consumption =</span> (consumption <span class="sc">-</span> <span class="fu">mean</span>(consumption)) <span class="sc">/</span> <span class="fu">sd</span>(consumption)),</span>
+<span id="cb17-12"><a href="#cb17-12"></a>    <span class="fu">join_by</span>(name <span class="sc">==</span> country)</span>
+<span id="cb17-13"><a href="#cb17-13"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> name, <span class="at">y =</span> consumption, <span class="at">color =</span> name)) <span class="sc">+</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
+<span id="cb17-17"><a href="#cb17-17"></a>  <span class="fu">theme</span>(</span>
+<span id="cb17-18"><a href="#cb17-18"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb17-19"><a href="#cb17-19"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb17-20"><a href="#cb17-20"></a>  ) <span class="sc">+</span></span>
+<span id="cb17-21"><a href="#cb17-21"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Standardized Consumption"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="Exam1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="1056"></p>
+<figure class="figure"><p><img src="Exam1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -454,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <!-- -->
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1079,69 +1111,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../test/Sheet1.html" class="pagination-link" aria-label="Sheet 1">
-        <span class="nav-page-text">Sheet 1</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../test/Exam2.html" class="pagination-link" aria-label="Exam 2">
+        <span class="nav-page-text">Exam 2</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb18" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">---</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a></span>
 <span id="cb18-3"><a href="#cb18-3"></a><span class="co">---</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="fu"># Exam 1 {-}</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="fu">### Grand Research Question : {-}</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="fu"># Exam 1 {.unnumbered}</span></span>
 <span id="cb18-6"><a href="#cb18-6"></a></span>
-<span id="cb18-7"><a href="#cb18-7"></a><span class="fu">#### What does the consumption of each food category in each country look like ? {-}</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="fu">### Grand Research Question : {.unnumbered}</span></span>
 <span id="cb18-8"><a href="#cb18-8"></a></span>
-<span id="cb18-11"><a href="#cb18-11"></a><span class="in">```{r}</span></span>
-<span id="cb18-12"><a href="#cb18-12"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb18-13"><a href="#cb18-13"></a><span class="fu">library</span>(readr)</span>
-<span id="cb18-14"><a href="#cb18-14"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb18-15"><a href="#cb18-15"></a><span class="fu">library</span>(sf)</span>
-<span id="cb18-16"><a href="#cb18-16"></a></span>
-<span id="cb18-17"><a href="#cb18-17"></a><span class="in">```</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="fu">#### What does the consumption of each food category in each country look like ? {.unnumbered}</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a></span>
+<span id="cb18-13"><a href="#cb18-13"></a><span class="in">```{r}</span></span>
+<span id="cb18-14"><a href="#cb18-14"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-15"><a href="#cb18-15"></a><span class="fu">library</span>(readr)</span>
+<span id="cb18-16"><a href="#cb18-16"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb18-17"><a href="#cb18-17"></a><span class="fu">library</span>(sf)</span>
 <span id="cb18-18"><a href="#cb18-18"></a></span>
-<span id="cb18-21"><a href="#cb18-21"></a><span class="in">```{r}</span></span>
-<span id="cb18-22"><a href="#cb18-22"></a><span class="fu">library</span>(tidytuesdayR)</span>
-<span id="cb18-23"><a href="#cb18-23"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
-<span id="cb18-24"><a href="#cb18-24"></a>fc <span class="ot">&lt;-</span>tuesdata<span class="sc">$</span>food_consumption</span>
-<span id="cb18-25"><a href="#cb18-25"></a><span class="in">```</span></span>
-<span id="cb18-26"><a href="#cb18-26"></a></span>
-<span id="cb18-27"><a href="#cb18-27"></a></span>
-<span id="cb18-28"><a href="#cb18-28"></a><span class="fu">##### First let's look at our data : {-}</span></span>
-<span id="cb18-29"><a href="#cb18-29"></a></span>
+<span id="cb18-19"><a href="#cb18-19"></a><span class="in">```</span></span>
+<span id="cb18-20"><a href="#cb18-20"></a></span>
+<span id="cb18-23"><a href="#cb18-23"></a><span class="in">```{r}</span></span>
+<span id="cb18-24"><a href="#cb18-24"></a><span class="fu">library</span>(tidytuesdayR)</span>
+<span id="cb18-25"><a href="#cb18-25"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
+<span id="cb18-26"><a href="#cb18-26"></a>fc <span class="ot">&lt;-</span>tuesdata<span class="sc">$</span>food_consumption</span>
+<span id="cb18-27"><a href="#cb18-27"></a><span class="in">```</span></span>
+<span id="cb18-28"><a href="#cb18-28"></a></span>
+<span id="cb18-29"><a href="#cb18-29"></a><span class="fu">##### First let's look at our data : {.unnumbered}</span></span>
 <span id="cb18-30"><a href="#cb18-30"></a></span>
 <span id="cb18-33"><a href="#cb18-33"></a><span class="in">```{r}</span></span>
 <span id="cb18-34"><a href="#cb18-34"></a><span class="fu">head</span>(fc)</span>
 <span id="cb18-35"><a href="#cb18-35"></a><span class="in">```</span></span>
-<span id="cb18-38"><a href="#cb18-38"></a><span class="in">```{r}</span></span>
-<span id="cb18-39"><a href="#cb18-39"></a><span class="fu">str</span>(fc)</span>
-<span id="cb18-40"><a href="#cb18-40"></a><span class="in">```</span></span>
-<span id="cb18-41"><a href="#cb18-41"></a></span>
-<span id="cb18-44"><a href="#cb18-44"></a><span class="in">```{r}</span></span>
-<span id="cb18-45"><a href="#cb18-45"></a><span class="fu">nrow</span>(fc)</span>
-<span id="cb18-46"><a href="#cb18-46"></a><span class="in">```</span></span>
-<span id="cb18-47"><a href="#cb18-47"></a></span>
-<span id="cb18-50"><a href="#cb18-50"></a><span class="in">```{r}</span></span>
-<span id="cb18-51"><a href="#cb18-51"></a><span class="fu">dim</span>(fc)</span>
-<span id="cb18-52"><a href="#cb18-52"></a><span class="in">```</span></span>
-<span id="cb18-53"><a href="#cb18-53"></a></span>
-<span id="cb18-56"><a href="#cb18-56"></a><span class="in">```{r}</span></span>
-<span id="cb18-57"><a href="#cb18-57"></a><span class="fu">tail</span>(fc)</span>
-<span id="cb18-58"><a href="#cb18-58"></a><span class="in">```</span></span>
-<span id="cb18-61"><a href="#cb18-61"></a><span class="in">```{r}</span></span>
-<span id="cb18-62"><a href="#cb18-62"></a><span class="fu">head</span>(fc,<span class="dv">22</span>)</span>
-<span id="cb18-63"><a href="#cb18-63"></a><span class="fu">tail</span>(fc,<span class="dv">22</span>)</span>
-<span id="cb18-64"><a href="#cb18-64"></a><span class="in">```</span></span>
-<span id="cb18-65"><a href="#cb18-65"></a><span class="fu">### The Answer : {-}</span></span>
-<span id="cb18-66"><a href="#cb18-66"></a></span>
-<span id="cb18-69"><a href="#cb18-69"></a><span class="in">```{r}</span></span>
-<span id="cb18-70"><a href="#cb18-70"></a><span class="co">#| fig-height: 22</span></span>
-<span id="cb18-71"><a href="#cb18-71"></a><span class="co">#| fig-width: 11</span></span>
-<span id="cb18-72"><a href="#cb18-72"></a></span>
-<span id="cb18-73"><a href="#cb18-73"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb18-74"><a href="#cb18-74"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb18-75"><a href="#cb18-75"></a></span>
-<span id="cb18-76"><a href="#cb18-76"></a><span class="in">```</span></span>
+<span id="cb18-36"><a href="#cb18-36"></a></span>
+<span id="cb18-39"><a href="#cb18-39"></a><span class="in">```{r}</span></span>
+<span id="cb18-40"><a href="#cb18-40"></a><span class="fu">str</span>(fc)</span>
+<span id="cb18-41"><a href="#cb18-41"></a><span class="in">```</span></span>
+<span id="cb18-42"><a href="#cb18-42"></a></span>
+<span id="cb18-45"><a href="#cb18-45"></a><span class="in">```{r}</span></span>
+<span id="cb18-46"><a href="#cb18-46"></a><span class="fu">nrow</span>(fc)</span>
+<span id="cb18-47"><a href="#cb18-47"></a><span class="in">```</span></span>
+<span id="cb18-48"><a href="#cb18-48"></a></span>
+<span id="cb18-51"><a href="#cb18-51"></a><span class="in">```{r}</span></span>
+<span id="cb18-52"><a href="#cb18-52"></a><span class="fu">dim</span>(fc)</span>
+<span id="cb18-53"><a href="#cb18-53"></a><span class="in">```</span></span>
+<span id="cb18-54"><a href="#cb18-54"></a></span>
+<span id="cb18-57"><a href="#cb18-57"></a><span class="in">```{r}</span></span>
+<span id="cb18-58"><a href="#cb18-58"></a><span class="fu">tail</span>(fc)</span>
+<span id="cb18-59"><a href="#cb18-59"></a><span class="in">```</span></span>
+<span id="cb18-60"><a href="#cb18-60"></a></span>
+<span id="cb18-63"><a href="#cb18-63"></a><span class="in">```{r}</span></span>
+<span id="cb18-64"><a href="#cb18-64"></a><span class="fu">head</span>(fc,<span class="dv">22</span>)</span>
+<span id="cb18-65"><a href="#cb18-65"></a><span class="fu">tail</span>(fc,<span class="dv">22</span>)</span>
+<span id="cb18-66"><a href="#cb18-66"></a><span class="in">```</span></span>
+<span id="cb18-67"><a href="#cb18-67"></a></span>
+<span id="cb18-68"><a href="#cb18-68"></a><span class="fu">### The Answer : {.unnumbered}</span></span>
+<span id="cb18-69"><a href="#cb18-69"></a></span>
+<span id="cb18-70"><a href="#cb18-70"></a><span class="fu">#### Not a very good visualization as we need to clean and wrangle our data more (*see Exam 2*)</span></span>
+<span id="cb18-71"><a href="#cb18-71"></a></span>
+<span id="cb18-74"><a href="#cb18-74"></a><span class="in">```{r}</span></span>
+<span id="cb18-75"><a href="#cb18-75"></a><span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-76"><a href="#cb18-76"></a>  <span class="fu">select</span>(name) <span class="sc">|&gt;</span></span>
+<span id="cb18-77"><a href="#cb18-77"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"United States of America"</span>, <span class="st">"USA"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb18-78"><a href="#cb18-78"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Bosnia and Herz."</span>, <span class="st">"Bosnia and Herzegovina"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb18-79"><a href="#cb18-79"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Czechia"</span>, <span class="st">"Czech Republic"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb18-80"><a href="#cb18-80"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Taiwan"</span>, <span class="st">"Taiwan. ROC"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb18-81"><a href="#cb18-81"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb18-82"><a href="#cb18-82"></a>    fc <span class="sc">|&gt;</span></span>
+<span id="cb18-83"><a href="#cb18-83"></a>      <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb18-84"><a href="#cb18-84"></a>      <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb18-85"><a href="#cb18-85"></a>      <span class="fu">mutate</span>(<span class="at">consumption =</span> (consumption <span class="sc">-</span> <span class="fu">mean</span>(consumption)) <span class="sc">/</span> <span class="fu">sd</span>(consumption)),</span>
+<span id="cb18-86"><a href="#cb18-86"></a>    <span class="fu">join_by</span>(name <span class="sc">==</span> country)</span>
+<span id="cb18-87"><a href="#cb18-87"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-88"><a href="#cb18-88"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> name, <span class="at">y =</span> consumption, <span class="at">color =</span> name)) <span class="sc">+</span></span>
+<span id="cb18-89"><a href="#cb18-89"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-90"><a href="#cb18-90"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
+<span id="cb18-91"><a href="#cb18-91"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-92"><a href="#cb18-92"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb18-93"><a href="#cb18-93"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb18-94"><a href="#cb18-94"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-95"><a href="#cb18-95"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Standardized Consumption"</span>)</span>
+<span id="cb18-96"><a href="#cb18-96"></a></span>
+<span id="cb18-97"><a href="#cb18-97"></a></span>
+<span id="cb18-98"><a href="#cb18-98"></a></span>
+<span id="cb18-99"><a href="#cb18-99"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
