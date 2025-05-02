@@ -1,11 +1,9 @@
 ---
-title: "Solo Project"
-editor: visual
-execute: 
-  warning: false
-  code: true
-  echo: false
+
+
 ---
+# Solo Project {-}
+
 
 ```{r}
 library(tidyverse)
@@ -26,7 +24,6 @@ nz_boundaries <- ne_states(country = "new zealand")
 ```{r}
 st_bbox(nz_boundaries)
 ```
-
 
 First step was to map New Zealand and outline its 16 regions within that map so that I could investigate each region later on.
 
@@ -103,10 +100,6 @@ fig.alt = "Choropleth map showing New Zealands median age for each of it's 16 ma
 ```
 
 My work here was to show the variation of median age within New Zealand but also to explore whether or not New Zealand has a young or ageing-population and explore that question in it's specific regions as well.
-
-
-
-
 
 It is clear that the West Coast has the oldest median age population at 48.1 as it is colored dark blue, why is that?
 And on the other hand what makes it so that Auckland has a median age more than 10 years younger than West Coast at 35.9 showing up in light yellow.

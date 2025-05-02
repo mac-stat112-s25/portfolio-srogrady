@@ -1,7 +1,8 @@
 ---
-title: "ICAreshaping"
-editor: visual
+
 ---
+# Reshaping {-} 
+
 
 ```{r}
 library(tidyverse)

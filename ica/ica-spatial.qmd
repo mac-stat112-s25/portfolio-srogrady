@@ -1,6 +1,8 @@
 ---
-title: "Spatial Viz"
+
 ---
+# Spatial Viz {-} 
+
 
 Use this file for practice with the **spatial viz** in-class activity.  Refer to the class website for details.
 

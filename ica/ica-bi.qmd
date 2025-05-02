@@ -1,6 +1,7 @@
 ---
-title: "Bivariate Viz"
+
 ---
+# Bivariate Viz {-} 
 
 Use this file for practice with the **bivariate viz** in-class activity.  Refer to the class website for details.
 

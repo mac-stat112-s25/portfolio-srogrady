@@ -1,10 +1,9 @@
 ---
-title: "FactorsICA"
-editor: visual
+
 ---
+# Factors {-} 
 
 ## Exercises
-
 
 The exercises revisit our `grades` data:
 

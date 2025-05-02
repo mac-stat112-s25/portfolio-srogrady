@@ -1,4 +1,15 @@
 ---
-title: "Exam 1"
+
 ---
+# Exam 1 {-}
+
+
+```{r}
+library(tidyverse)
+library(tidytuesdayR)
+library(readr)
+
+```
+
+
 

@@ -1,7 +1,8 @@
 ---
-title: "wranglingICA"
-editor: visual
+
 ---
+# Wrangling {-} 
+
 
 ```{r}
 # Define elections_small

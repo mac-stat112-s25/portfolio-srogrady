@@ -45,7 +45,6 @@ book:
       - ica/Factors.qmd
       - ica/strings.qmd
       - ica/Data_Import.qmd
-      - ica/proposal.qmd
       
     - part: "Exams"
       chapters: 
