@@ -233,6 +233,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../ica/Effectiveica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Effective Viz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../ica/wranglingICA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wrangling</span></a>
   </div>
@@ -247,6 +253,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../ica/ICAreshapingg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reshaping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/joining.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Joining</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -338,9 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><hr>
-<hr>
-<p>Use this file to generate a professional looking <strong>spatial</strong> visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</p>
+</header><p>Use this file to generate a professional looking <strong>spatial</strong> visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</p>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
@@ -357,8 +367,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">color =</span><span class="st">"red"</span>, <span class="at">lng =</span> <span class="sc">~</span>Longitude, <span class="at">lat =</span> <span class="sc">~</span>Latitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-4ed1245eba96bb6ade10" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-4ed1245eba96bb6ade10">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[45.85,45.22,45.21,44.73,44.72,45.06,46.37,46.37,47.49,45.17,45.17,44.86,44.83,44.86,44.85,44.86,44.85,44.86,45.06,45.09,45.14,45.13,45.12,45.17,44.75,44.74,44.75,45.57,45.16,45.17,44.86,44.86,44.83,45.2,45.15,45.13,44.83,44.82,45.05,46.81,46.8,46.82,46.81,46.78,44.79,44.83,44.84,44.8,44.81,44.84,44.85,44.89,44.85,44.86,44.88,44.91,44.88,44.91,44.88,44.86,44.91,44.88,44.87,45.32,44.9,45.27,45.28,45.06,44.98,47.21,44.74,44.93,44.87,44.82,44.72,44.71,44.69,44.68,45.18,44.17,44.17,45.13,45.13,45.1,45.09,45.05,44.97,45.05,44.96,44.95,44.98,44.97,44.97,44.96,44.97,44.98,44.96,44.97,44.97,45.07,44.98,44.98,44.98,44.91,45,44.97,44.98,44.97,44.97,44.92,45.29,46.85,46.86,45.03,45.03,44.43,45.03,44.96,44.96,45.28,44.08,44.09,45.02,45.03,45.01,44.57,44.88,44.86,44.02,44.07,44.06,44,43.95,44.02,44.06,45.2,45.2,44.73,45.01,45.01,45.01,45.01,44.89,44.94,44.75,44.74,44.78,45.06,45.08,45.57,44.94,44.88,44.88,44.88,45.55,44.95,44.93,44.94,44.95,44.92,44.95,44.95,45,44.97,44.95,45.04,45.03,45.05,45.08,47.51,44.85,45.55,44.97,44.9,45.04,45.07,44.03,44.94,44.93,44.94,44.94,44.92,44.93,44.89],[-95.39,-93.31999999999999,-93.36,-93.20999999999999,-93.18000000000001,-93.15000000000001,-94.23999999999999,-94.25,-94.91,-93.23,-93.23999999999999,-93.23999999999999,-93.29000000000001,-93.23999999999999,-93.23999999999999,-93.31,-93.23999999999999,-93.31,-93.31999999999999,-93.38,-93.37,-93.36,-93.36,-93.86,-93.29000000000001,-93.29000000000001,-93.3,-93.20999999999999,-93.39,-93.39,-93.52,-93.54000000000001,-93.59999999999999,-93.34999999999999,-93.28,-93.27,-92.95999999999999,-92.93000000000001,-93.36,-92.17,-92.16,-92.08,-92.16,-92.09999999999999,-93.20999999999999,-93.17,-93.17,-93.19,-93.20999999999999,-93.40000000000001,-93.43000000000001,-93.42,-93.43000000000001,-93.44,-93.33,-93.36,-93.31999999999999,-93.33,-93.33,-93.34999999999999,-93.34999999999999,-93.31999999999999,-93.33,-93.56,-93.56999999999999,-93,-93.01000000000001,-93.25,-93.38,-93.53,-92.89,-93.42,-94.38,-93.08,-93.18000000000001,-93.28,-93.28,-93.29000000000001,-93.11,-93.95,-93.95,-93.48999999999999,-93.48,-93.45,-93.44,-93.53,-93.27,-93.36,-93.23999999999999,-93.23999999999999,-93.23999999999999,-93.23,-93.27,-93.29000000000001,-93.23999999999999,-93.27,-93.28,-93.23,-93.25,-93.25,-93.27,-93.27,-93.28,-93.29000000000001,-93.23,-93.28,-93.27,-93.45,-93.44,-93.5,-93.77,-96.77,-96.75,-93.39,-93.02,-93.19,-92.84999999999999,-92.95999999999999,-92.95999999999999,-93.56,-93.23999999999999,-93.25,-93.48,-93.45,-93.45,-92.58,-93.25,-93.29000000000001,-92.45999999999999,-92.53,-92.5,-92.48,-92.47,-92.47,-92.47,-93.55,-93.55,-93.13,-93.16,-93.18000000000001,-93.17,-93.18000000000001,-93.08,-93.15000000000001,-93.38,-93.38,-93.41,-93.14,-93.12,-94.15000000000001,-93.39,-93.20999999999999,-93.20999999999999,-93.20999999999999,-94.19,-93.33,-93.34,-93.14,-93.03,-93.19,-93.17,-93.09999999999999,-92.95,-93.17,-93.16,-92.84,-92.84,-93.06,-93.06,-92.55,-93.77,-94.22,-93.51000000000001,-93.08,-93.02,-93.02,-91.62,-92.94,-92.95999999999999,-92.91,-92.90000000000001,-92.93000000000001,-92.95999999999999,-92.94],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"red","weight":5,"opacity":0.5,"fill":true,"fillColor":"red","fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[43.95,47.51],"lng":[-96.77,-91.62]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-1c921573a2e0d74ec0a1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1c921573a2e0d74ec0a1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[45.85,45.22,45.21,44.73,44.72,45.06,46.37,46.37,47.49,45.17,45.17,44.86,44.83,44.86,44.85,44.86,44.85,44.86,45.06,45.09,45.14,45.13,45.12,45.17,44.75,44.74,44.75,45.57,45.16,45.17,44.86,44.86,44.83,45.2,45.15,45.13,44.83,44.82,45.05,46.81,46.8,46.82,46.81,46.78,44.79,44.83,44.84,44.8,44.81,44.84,44.85,44.89,44.85,44.86,44.88,44.91,44.88,44.91,44.88,44.86,44.91,44.88,44.87,45.32,44.9,45.27,45.28,45.06,44.98,47.21,44.74,44.93,44.87,44.82,44.72,44.71,44.69,44.68,45.18,44.17,44.17,45.13,45.13,45.1,45.09,45.05,44.97,45.05,44.96,44.95,44.98,44.97,44.97,44.96,44.97,44.98,44.96,44.97,44.97,45.07,44.98,44.98,44.98,44.91,45,44.97,44.98,44.97,44.97,44.92,45.29,46.85,46.86,45.03,45.03,44.43,45.03,44.96,44.96,45.28,44.08,44.09,45.02,45.03,45.01,44.57,44.88,44.86,44.02,44.07,44.06,44,43.95,44.02,44.06,45.2,45.2,44.73,45.01,45.01,45.01,45.01,44.89,44.94,44.75,44.74,44.78,45.06,45.08,45.57,44.94,44.88,44.88,44.88,45.55,44.95,44.93,44.94,44.95,44.92,44.95,44.95,45,44.97,44.95,45.04,45.03,45.05,45.08,47.51,44.85,45.55,44.97,44.9,45.04,45.07,44.03,44.94,44.93,44.94,44.94,44.92,44.93,44.89],[-95.39,-93.31999999999999,-93.36,-93.20999999999999,-93.18000000000001,-93.15000000000001,-94.23999999999999,-94.25,-94.91,-93.23,-93.23999999999999,-93.23999999999999,-93.29000000000001,-93.23999999999999,-93.23999999999999,-93.31,-93.23999999999999,-93.31,-93.31999999999999,-93.38,-93.37,-93.36,-93.36,-93.86,-93.29000000000001,-93.29000000000001,-93.3,-93.20999999999999,-93.39,-93.39,-93.52,-93.54000000000001,-93.59999999999999,-93.34999999999999,-93.28,-93.27,-92.95999999999999,-92.93000000000001,-93.36,-92.17,-92.16,-92.08,-92.16,-92.09999999999999,-93.20999999999999,-93.17,-93.17,-93.19,-93.20999999999999,-93.40000000000001,-93.43000000000001,-93.42,-93.43000000000001,-93.44,-93.33,-93.36,-93.31999999999999,-93.33,-93.33,-93.34999999999999,-93.34999999999999,-93.31999999999999,-93.33,-93.56,-93.56999999999999,-93,-93.01000000000001,-93.25,-93.38,-93.53,-92.89,-93.42,-94.38,-93.08,-93.18000000000001,-93.28,-93.28,-93.29000000000001,-93.11,-93.95,-93.95,-93.48999999999999,-93.48,-93.45,-93.44,-93.53,-93.27,-93.36,-93.23999999999999,-93.23999999999999,-93.23999999999999,-93.23,-93.27,-93.29000000000001,-93.23999999999999,-93.27,-93.28,-93.23,-93.25,-93.25,-93.27,-93.27,-93.28,-93.29000000000001,-93.23,-93.28,-93.27,-93.45,-93.44,-93.5,-93.77,-96.77,-96.75,-93.39,-93.02,-93.19,-92.84999999999999,-92.95999999999999,-92.95999999999999,-93.56,-93.23999999999999,-93.25,-93.48,-93.45,-93.45,-92.58,-93.25,-93.29000000000001,-92.45999999999999,-92.53,-92.5,-92.48,-92.47,-92.47,-92.47,-93.55,-93.55,-93.13,-93.16,-93.18000000000001,-93.17,-93.18000000000001,-93.08,-93.15000000000001,-93.38,-93.38,-93.41,-93.14,-93.12,-94.15000000000001,-93.39,-93.20999999999999,-93.20999999999999,-93.20999999999999,-94.19,-93.33,-93.34,-93.14,-93.03,-93.19,-93.17,-93.09999999999999,-92.95,-93.17,-93.16,-92.84,-92.84,-93.06,-93.06,-92.55,-93.77,-94.22,-93.51000000000001,-93.08,-93.02,-93.02,-91.62,-92.94,-92.95999999999999,-92.91,-92.90000000000001,-92.93000000000001,-92.95999999999999,-92.94],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"red","weight":5,"opacity":0.5,"fill":true,"fillColor":"red","fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[43.95,47.51],"lng":[-96.77,-91.62]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -996,34 +1006,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">---</span></span>
+<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu"># Best Spatial Viz {-}</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co">---</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu"># Best Spatial Viz {-}</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
 <span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="in">```{r}</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#| eval: true</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="co"># Import starbucks location data</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a>starbucks <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/starbucks.csv"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18"></a></span>
-<span id="cb3-19"><a href="#cb3-19"></a>starbucks_mn <span class="ot">&lt;-</span> starbucks <span class="sc">|&gt;</span>   </span>
-<span id="cb3-20"><a href="#cb3-20"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"US"</span>, State.Province <span class="sc">==</span> <span class="st">"MN"</span>)</span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="in">```</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a></span>
-<span id="cb3-23"><a href="#cb3-23"></a></span>
-<span id="cb3-26"><a href="#cb3-26"></a><span class="in">```{r}</span></span>
-<span id="cb3-27"><a href="#cb3-27"></a><span class="fu">leaflet</span>(<span class="at">data =</span> starbucks_mn) <span class="sc">|&gt;</span> </span>
-<span id="cb3-28"><a href="#cb3-28"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-29"><a href="#cb3-29"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">color =</span><span class="st">"red"</span>, <span class="at">lng =</span> <span class="sc">~</span>Longitude, <span class="at">lat =</span> <span class="sc">~</span>Latitude)</span>
-<span id="cb3-30"><a href="#cb3-30"></a></span>
-<span id="cb3-31"><a href="#cb3-31"></a></span>
-<span id="cb3-32"><a href="#cb3-32"></a><span class="in">```</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="in">```{r}</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#| eval: true</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># Import starbucks location data</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>starbucks <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/starbucks.csv"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15"></a></span>
+<span id="cb3-16"><a href="#cb3-16"></a>starbucks_mn <span class="ot">&lt;-</span> starbucks <span class="sc">|&gt;</span>   </span>
+<span id="cb3-17"><a href="#cb3-17"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"US"</span>, State.Province <span class="sc">==</span> <span class="st">"MN"</span>)</span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="in">```</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a></span>
+<span id="cb3-20"><a href="#cb3-20"></a></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="in">```{r}</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="fu">leaflet</span>(<span class="at">data =</span> starbucks_mn) <span class="sc">|&gt;</span> </span>
+<span id="cb3-25"><a href="#cb3-25"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-26"><a href="#cb3-26"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">color =</span><span class="st">"red"</span>, <span class="at">lng =</span> <span class="sc">~</span>Longitude, <span class="at">lat =</span> <span class="sc">~</span>Latitude)</span>
+<span id="cb3-27"><a href="#cb3-27"></a></span>
+<span id="cb3-28"><a href="#cb3-28"></a></span>
+<span id="cb3-29"><a href="#cb3-29"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

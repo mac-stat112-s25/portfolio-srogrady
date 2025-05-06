@@ -229,6 +229,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../ica/Effectiveica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Effective Viz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../ica/wranglingICA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wrangling</span></a>
   </div>
@@ -243,6 +249,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../ica/ICAreshapingg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reshaping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/joining.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Joining</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -334,9 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><hr>
-<hr>
-<p>Use this file to generate a professional looking <strong>bivariate</strong> visualization. The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.</p>
+</header><p>Use this file to generate a professional looking <strong>bivariate</strong> visualization. The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.</p>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co"># Import data</span></span>
@@ -993,33 +1003,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu"># Best Bivariate Viz {-}</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">---</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu"># Best Bivariate Viz {-}</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.</span>
 <span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a>Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="in">```{r}</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#| eval: true</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="co"># Import data</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a>elections <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/election_2020_county.csv"</span>)</span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="in">```</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a></span>
-<span id="cb4-18"><a href="#cb4-18"></a></span>
-<span id="cb4-19"><a href="#cb4-19"></a></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="in">```{r}</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="fu">ggplot</span>(elections, <span class="fu">aes</span>(<span class="at">y =</span> repub_pct_20, <span class="at">x =</span> median_age)) <span class="sc">+</span></span>
-<span id="cb4-24"><a href="#cb4-24"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"light blue"</span> ) <span class="sc">+</span> </span>
-<span id="cb4-25"><a href="#cb4-25"></a>  <span class="fu">geom_smooth</span>()<span class="sc">+</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb4-27"><a href="#cb4-27"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Median Age (year)"</span>, <span class="at">y =</span> <span class="st">"The 2020 Republican Country-level Support"</span>, <span class="at">title =</span> <span class="st">"Relationship between Median Age and 2020 Republican Election Suppport"</span>, <span class="at">caption =</span> <span class="st">"Made by Shaylee (4/25)"</span>)</span>
-<span id="cb4-28"><a href="#cb4-28"></a></span>
-<span id="cb4-29"><a href="#cb4-29"></a>fig.alt <span class="ot">=</span> <span class="st">"Scatter Plot showing the Relationship between Median Age (x-axis) and 2020 Republican Election Suppport (y-axis). Use a line of best fit to show a possible weak positive relationship where most of the data is clustered between age 30-50 and 25-75% support."</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a></span>
-<span id="cb4-31"><a href="#cb4-31"></a><span class="in">```</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="in">```{r}</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#| eval: true</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co"># Import data</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>elections <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/election_2020_county.csv"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="in">```</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="in">```{r}</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="fu">ggplot</span>(elections, <span class="fu">aes</span>(<span class="at">y =</span> repub_pct_20, <span class="at">x =</span> median_age)) <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"light blue"</span> ) <span class="sc">+</span> </span>
+<span id="cb4-22"><a href="#cb4-22"></a>  <span class="fu">geom_smooth</span>()<span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Median Age (year)"</span>, <span class="at">y =</span> <span class="st">"The 2020 Republican Country-level Support"</span>, <span class="at">title =</span> <span class="st">"Relationship between Median Age and 2020 Republican Election Suppport"</span>, <span class="at">caption =</span> <span class="st">"Made by Shaylee (4/25)"</span>)</span>
+<span id="cb4-25"><a href="#cb4-25"></a></span>
+<span id="cb4-26"><a href="#cb4-26"></a>fig.alt <span class="ot">=</span> <span class="st">"Scatter Plot showing the Relationship between Median Age (x-axis) and 2020 Republican Election Suppport (y-axis). Use a line of best fit to show a possible weak positive relationship where most of the data is clustered between age 30-50 and 25-75% support."</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
