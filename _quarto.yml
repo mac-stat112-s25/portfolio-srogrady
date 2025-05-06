@@ -39,12 +39,15 @@ book:
       - ica/ica-bi.qmd
       - ica/ica-multi.qmd
       - ica/ica-spatial.qmd
+      - ica/Effectiveica.qmd
       - ica/wranglingICA.qmd
       - ica/datesICA.qmd
       - ica/ICAreshapingg.qmd
+      - ica/joining.qmd
       - ica/Factors.qmd
       - ica/strings.qmd
       - ica/Data_Import.qmd
+      
       
     - part: "Exams"
       chapters: 
